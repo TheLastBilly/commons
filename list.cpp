@@ -1,4 +1,12 @@
-#include "include/list.hpp"
+// list - list.cpp
+//
+// Copyright (c) 2020, TheLastBilly
+// All rights reserved.
+//
+// This source code is licensed under the BSD-style license found in the
+// LICENSE file in the root directory of this source tree.
+
+#include "list.hpp"
 
 ListFile::ListFile( std::string file_name ):
     file_name( file_name ),
