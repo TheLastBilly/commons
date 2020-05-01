@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 
-class PlayerList
+class ListFile
 {
 public:
     enum Status
@@ -23,7 +23,7 @@ private:
     size_t list_size;
 
 public:
-    PlayerList( std::string file_name = "" );
+    ListFile( std::string file_name = "" );
 
     Status read( std::string file_name = "" );
 

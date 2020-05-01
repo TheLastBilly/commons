@@ -1,6 +1,6 @@
 #include "include/list.hpp"
 
-PlayerList::PlayerList( std::string file_name ):
+ListFile::ListFile( std::string file_name ):
     file_name( file_name ),
     list_size(0)
 {
@@ -14,7 +14,7 @@ PlayerList::PlayerList( std::string file_name ):
     }
 }
 
-PlayerList::Status PlayerList::read( std::string file_name )
+ListFile::Status ListFile::read( std::string file_name )
 {
     if(file_name == "")
         file_name = this->file_name;
@@ -35,12 +35,12 @@ PlayerList::Status PlayerList::read( std::string file_name )
     return (status = Status::OK);
 }
 
-PlayerList::Status PlayerList::get_status() const
+ListFile::Status ListFile::get_status() const
 {
     return status;
 }
 
-std::string PlayerList::get_status_description() const
+std::string ListFile::get_status_description() const
 {
     switch (status)
     {
@@ -54,7 +54,7 @@ std::string PlayerList::get_status_description() const
     return "Undefined state";
 }
 
-PlayerList::List PlayerList::operator[]( const std::string &index ) const
+ListFile::List ListFile::operator[]( const std::string &index ) const
 {
     size_t size = index.size();
     List list; 
@@ -68,7 +68,7 @@ PlayerList::List PlayerList::operator[]( const std::string &index ) const
     return list;
 }
 
-std::string PlayerList::operator[]( size_t index ) const
+std::string ListFile::operator[]( size_t index ) const
 {
     if( index > name_list.size() - 1)
         return name_list.at(0);
@@ -76,15 +76,15 @@ std::string PlayerList::operator[]( size_t index ) const
     return name_list.at( index );
 }
 
-bool PlayerList::operator==( PlayerList::Status status ) const
+bool ListFile::operator==( ListFile::Status status ) const
 {
     return this->status == status;
 }
-bool PlayerList::operator!=( PlayerList::Status status ) const
+bool ListFile::operator!=( ListFile::Status status ) const
 {
     return !(this->status == status);
 }
-size_t PlayerList::size() const
+size_t ListFile::size() const
 {
     return list_size;
 }
