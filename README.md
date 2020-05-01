@@ -4,9 +4,10 @@ This is a collection of commom libraries that I either used for some projects or
 
 # Libraries included:
 
-- List.hpp: A simple library that reads the lines on a text file and stores them on a vector. I use it to read list files and find items inside it.
+## List.hpp
+A simple library that reads the lines on a text file and stores them on a vector. I use it to read list files and find items inside it.
 
-Exmaple:
+**Example**
 ```C++
 #include <iostream>
 #include "list.hpp"
